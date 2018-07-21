@@ -25,12 +25,14 @@ The option <code>--provider</code> must be set in all commands. It should be set
 ### Commands: 
 #### readChannel    
 Reads the content of a given MAM channel and printing information such as the channelRoot.
+
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | channelRoot | <code>string</code> |  | The root of the MAM channel. This is shared with others to read messages of a channel. |
 | seed | <code>string</code> |  | The seed of the MAM channel. It's need to publish new messages to a MAM channel. |
 | mode | <code>string</code> | 'public' | The mode of the MAM channel. Allowed are 'public', 'private' and 'restricted' |
 | sideKey | <code>string</code> | <code>null</code> | The sideKey needed for MAM channels in restricted mode. This is needed to read messages from this channel and to publish new ones. |
+
 Only channelRoot or seed are needed for reading a channel. The CLI will look for the channelRoot first and then for a seed.
 If both aren't given a random seed is generated.
 
@@ -41,6 +43,7 @@ $ mamCli-linux-x86 readChannel --seed=THISISTHESEEDOFTHETICACCOUNTANDISHOULDNOTG
 
 #### publish    
 Publishes a new message to a specified channel.
+
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | seed | <code>string</code> |  | The seed of the MAM channel. |

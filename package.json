@@ -14,6 +14,10 @@
     "name": "Robin Lamberti",
     "email": "lamberti.robin@gmail.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cr0ssing/mam.tools.js.git"
+  },
   "license": "ISC",
   "main": "lib/mamClient.js",
   "bin": {

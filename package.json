@@ -1,0 +1,50 @@
+{
+  "name": "mam.tools.js",
+  "version": "0.5.0",
+  "description": "A library making the use of mam more easy",
+  "keywords": [
+    "iota",
+    "mam",
+    "dlt",
+    "tangle",
+    "m2m",
+    "iot"
+  ],
+  "author": {
+    "name": "Robin Lamberti",
+    "email": "lamberti.robin@gmail.com"
+  },
+  "license": "ISC",
+  "main": "lib/mamClient.js",
+  "bin": {
+    "mam": "lib/mamCli.js"
+  },
+  "scripts": {
+    "test": "cross-env DEBUG=mam mocha",
+    "build-native": "pkg --out-path bin -t linux-x86,macos-x86,win-x86,linux-x64,macos-x64,win-x64 lib/mamCli.js",
+    "readme": "jsdoc2md -t jsdoc2md/README.hbs lib/mamClient.js lib/types.js > README.md",
+    "markdown": "jsdoc2md lib/mamClient.js lib/types.js > api.md",
+    "docs": "jsdoc lib/mamClient.js lib/types.js",
+    "cli-debug": "cross-env DEBUG=mam node lib/mamCli.js",
+    "cli": "node lib/mamCli.js",
+    "web": "browserify lib/mamClient.js > mam.tools.web.js"
+  },
+  "dependencies": {
+    "debug": "^3.1.0",
+    "iota.lib.js": "^0.4.7",
+    "mam.client.js": "git+ssh://git@github.com/iotaledger/mam.client.js.git",
+    "minimist": "^1.2.0",
+    "supports-color": "^5.4.0",
+    "winston": "^3.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^16.2.2",
+    "pkg": "4.3.1",
+    "chai": "^4.1.2",
+    "cross-env": "^5.2.0",
+    "jsdoc": "^3.5.5",
+    "jsdoc-to-markdown": "^4.0.1",
+    "mocha": "^5.2.0",
+    "rewire": "^4.0.1"
+  }
+}

@@ -1,4 +1,5 @@
 const log = require('../lib/logger').log
+const debug = require('debug')('mam-mock')
 
 const clients = {};
 
@@ -35,8 +36,12 @@ const changeMode = (client, mode, sideKey) => {
         if ((mode == 'restricted' && client.channels.restricted[sideKey]) 
             || (mode != 'restricted' && client.channels[mode])) {
             //channel already present
+            debug(`Alread present: mode: ${mode}, seed: ${seed}${mode == 'restricted' ? 
+                `, sideKey: ${sideKey}` : ''}`)
             client.channel = mode == 'restricted' ? client.channels.restricted[sideKey] : client.channels[mode]
         } else {
+            debug(`New channel: mode: ${mode}, seed: ${seed}${mode == 'restricted' ? 
+                `, sideKey: ${sideKey}` : ''}`)
             //not present. create new
             const channel = {
                 start: 0,

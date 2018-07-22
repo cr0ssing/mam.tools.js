@@ -1,4 +1,4 @@
-[![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/mam.tools.js)
+[![npm](https://img.shields.io/npm/v/mam.tools.js.svg)](https://www.npmjs.com/package/mam.tools.js)
 
 # MAM Tools
 A library containing tools to make the use of IOTAs Masked Authenticated Messaging more easy.
